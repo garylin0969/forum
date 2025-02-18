@@ -15,5 +15,12 @@ export const authOptions: NextAuthOptions = {
             }
             return session;
         },
+        /* https://next-auth.js.org/providers/google */
+        signIn: async ({ account }) => {
+            if (account && account.provider === 'google') {
+                return true; // Allow all Google accounts to sign in
+            }
+            return true; // Handle other providers differently if needed
+        },
     },
 };
