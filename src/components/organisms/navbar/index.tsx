@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 export function Navbar() {
     const { data: session } = useSession();
+    console.log(session);
 
     return (
         <nav className="border-b">
